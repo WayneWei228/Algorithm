@@ -1,0 +1,6 @@
+build/
+build.ninja
+build-win.cmd
+.ninja_log
+.DS_Store
+./bin
