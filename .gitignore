@@ -4,3 +4,4 @@ build-win.cmd
 .ninja_log
 ./bin
 .DS_Store
+.o
