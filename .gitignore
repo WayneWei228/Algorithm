@@ -5,3 +5,5 @@ build-win.cmd
 ./bin
 .DS_Store
 .o
+codechef/.DS_Store
+CodeJam/.DS_Store
