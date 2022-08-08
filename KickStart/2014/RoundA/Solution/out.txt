@@ -1,0 +1,10 @@
+Case #1:
+apple+banana=0
+apple+banana=0
+apple+apple=0
+banana+apple=0
+Case #2:
+a+c=0
+a+d=0
+b+c=0
+b+d=0

@@ -1,0 +1,4 @@
+*.bin
+*.o
+.sconsign.dblite
+inputs/

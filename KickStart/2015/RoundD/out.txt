@@ -1,0 +1,38 @@
+Case #1: 
+no = 0, cost = 0
+   no = 1, cost = 3
+   return
+   no = 1, cost = 2
+   return
+   no = 1, cost = 1
+      no = 2, cost = 2
+      return
+      no = 2, cost = 1
+      return
+      no = 2, cost = 2
+      return
+      no = 2, cost = 3
+      return
+   return
+   no = 1, cost = 0
+      no = 2, cost = 1
+      return
+      no = 2, cost = 0
+      return
+      no = 2, cost = 1
+      return
+      no = 2, cost = 2
+      return
+   return
+return
+2
+Case #2: 
+no = 0, cost = 0
+   no = 1, cost = 2
+   return
+   no = 1, cost = 1
+   return
+   no = 1, cost = 0
+   return
+return
+IMPOSSIBLE

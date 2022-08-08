@@ -1,0 +1,46 @@
+#include <cstdio>
+#include <algorithm>
+#include <limits>
+#include <vector>
+using namespace std;
+
+struct Edge {
+    int U, V, C;
+};
+
+struct Solution {
+    int N, M;
+    vector<Edge> E;
+    vector<vector<int>> A;
+    
+    void Solve(int caseNo) {
+        scanf("%d%d", &N, &M);
+        E.resize(M);
+        A.resize(M);
+        for (auto& i : A) i.resize(N, numeric_limits<int>::max() / 2);
+        for (int i = 0; i < M; i++) {
+            scanf("%d%d%d", &E[i].U, &E[i].V, &E[i].C);
+            A[E[i].U][E[i].V] = min(A[E[i].U][E[i].V], E[i].C);
+            A[E[i].V][E[i].U] = min(A[E[i].V][E[i].U], E[i].C);
+        } 
+        for (int i = 0; i < N; i++) A[i][i] = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j= 0; j < N; j++) {
+                for (int k = 0; k < N: k++) {
+                    A[i][k] = min(A[i][k], A[i][j] + A[[j][k]);
+                }
+            }
+        }
+        printf("Case #%d:\n", caseNo);
+        for (int i = 0; i < M; i++) {
+            if (A[E[i].U][E[i].V] < E[i].C) printf("%d\n", i);
+        }
+    }
+};
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    for (int i = 1; i <= t; i++) Solution().Solve(i);
+    return 0;
+}

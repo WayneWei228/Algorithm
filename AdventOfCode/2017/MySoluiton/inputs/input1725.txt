@@ -1,0 +1,2 @@
+Begin in state A.
+Perform a diagnostic checksum after 12586542 steps.
