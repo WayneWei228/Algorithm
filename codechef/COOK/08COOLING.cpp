@@ -24,8 +24,8 @@ struct Solution {
         sort(racks.begin(), racks.end());
         int i = 0;
         for (int j = 0; j < N; j++) {
-            if (cookies[i] <= racks[j]) {
-                ans += cookies[i];
+            if (cookies[i] <= racks[j]) {   
+                ans++;
                 i++;
             }
         }
