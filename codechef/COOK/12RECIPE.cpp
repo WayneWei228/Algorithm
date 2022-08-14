@@ -4,7 +4,7 @@ using namespace std;
 struct Solution {
 
     void Solve() {
-
+        
     }
 };
 
