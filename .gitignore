@@ -6,4 +6,3 @@ build-win.cmd
 **/.DS_Store
 *.o
 *.exe
-.DS_Store
