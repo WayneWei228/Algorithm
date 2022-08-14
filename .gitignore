@@ -7,3 +7,5 @@ build-win.cmd
 *.o
 *.exe
 a.out
+codechef/.DS_Store
+.DS_Store
