@@ -6,3 +6,5 @@ build-win.cmd
 **/.DS_Store
 *.o
 *.exe
+.vscode/c_cpp_properties.json
+.vscode/settings.json
