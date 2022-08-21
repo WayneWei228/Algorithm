@@ -1,64 +1,43 @@
 #include <algorithm>
 #include <cstdio>
+#include <set>
 #include <vector>
 using namespace std;
 
 // 找到最大的小于某数的数
 // lower_bound 第一个大于等于某数的数
+// upper_bound 第一个大于某数的数
 
+/*
+vector 用 upper_bound 因为支持随机访问
+随意访问也就是 it 可以 += n or -= n (n 可以是任意整数)
+multiset 不支持随意访问, 即指针 it 只能++ or --;
+*/
 struct Solution {
     int N;
     vector<int> A;
-    vector<int> answer;
+    multiset<int> S;
 
     void Solve(int caseNo) {
         scanf("%d", &N);
         A.resize(N);
-        answer.resize(N);
         for (int i = 0; i < N; i++) {
             scanf("%d", &A[i]);
-        }
-        for (int i = 0; i < A.size(); i++) {
-            vector<int> S(A);
-            sort(S.begin(), S.end());
-            int l = 0, r = S.size() - 1;
-            while (l < r) {  // <= 2 * A[i]
-                int mid = l + (r - l) / 2 + 1;
-                if (S[mid] > A[i] * 2) {
-                    r = mid - 1;
-                } else {
-                    l = mid;
-                }
-            }
-            // printf("S[l] %d A[i] %d\n", S[l], A[i]);
-            if (S[l] == A[i]) {
-                if (l + 1 < S.size() && S[l + 1] == A[i]) {
-                    l++;
-                }
-                l--;
-                if (l < 0) {
-                    answer[i] = -1;
-                } else {
-                    answer[i] = S[l];
-                }
-            } else {
-                answer[i] = S[l];
-            }
-            // if (S[l] == A[i]) {
-            //     while (S[l++] == A[i]);
-            //     l--;  // rightmost
-            //     if (l == 0) {
-            //         answer[i] = -1;
-            //     } else {
-            //         answer[i] = S[l - 1];
-            //     }
-            // } else {
-            //     answer[i] = S[l];
-            // }
+            S.emplace(A[i]);
         }
         printf("Case #%d:", caseNo);
-        for (int i = 0; i < answer.size(); i++) {
-            printf(" %d", answer[i]);
+        for (int i = 0; i < A.size(); i++) {
+            S.erase(S.find(A[i]));
+            int ans;
+            auto it = S.upper_bound(2 * A[i]); // 正确, 全对
+            // auto it = upper_bound(S.begin(), S.end(), 2 * A[i]); // 错误, Test Set 2 TLE
+            if (it == S.begin()) {
+                ans = -1;
+            } else {
+                ans = *(--it);
+            }
+            printf(" %d", ans);
+            S.insert(A[i]);
         }
         printf("\n");
     }
