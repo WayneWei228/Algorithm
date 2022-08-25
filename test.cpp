@@ -10,5 +10,7 @@ typedef struct SqList {
 } SqList;
 
 int main() {
+    int a = 18 ^ 1;
+    printf("%d\n", a);
     return 0;
 };
