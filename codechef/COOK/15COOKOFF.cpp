@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <cstdio>
 #include <vector>
+#include <limits>
+#include <functional>
 using namespace std;
 
 int BSearch(int lower, int upper, function<bool(int)> f) {
@@ -39,7 +41,7 @@ struct Solution {
 
     int Compute() {
         if (Bound2 - Bound1 - 1 >= M) {
-            return BSearch(Gap, Bound2 - Bound1, [&](int gap) {
+            return BSearch(Gap, C2 - C1, [&](int gap) {
                 int current = C[Bound1];
                 int ans = 0;
                 for (int i = Bound1 + 1; i < Bound2; i++) {
