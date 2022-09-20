@@ -17,6 +17,17 @@ using namespace std;
 两个变量，t1, t2, 表示厨师做这单之前的总时间
 每次把任务分配给总时间小的那一个人
 
+1 2 1
+
+S[i, j]
+for (int i = 0; i < N; i++) {
+    for (int j = V[i]; j < M; j++) {
+        if (S[i - 1, j] || S[i - 1, j - V[i]]) 
+            S[i, j] = true;
+    }
+}
+
+
 */
 
 struct Time {
