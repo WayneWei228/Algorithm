@@ -4,6 +4,7 @@
         "vector": "cpp",
         "__split_buffer": "cpp",
         "deque": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "cstdio": "cpp"
     }
 }

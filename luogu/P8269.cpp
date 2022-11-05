@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <cstdio>
+#include <limits>
 #include <vector>
 
 using namespace std;
@@ -9,17 +11,33 @@ struct Solution {
     int N;
     int64 ans = 0;
     vector<vector<int>> before;
-    char visited[1e5 + 5];
-    int f[1e5 + 5];
-    int v[1e5 + 5];
+    char visited[100005];
+    int f[100005];
+    int v[100005];
+
+    void Mark(int x) {
+        if (visited[x]) return;
+        visited[x] = true;
+        for (auto i : before[x]) {
+            Mark(i);
+        }
+        return;
+    }
 
     int MinValueCir(int start) {
         int a = start, b = start;
         do {
-            a = f(a);
-            b = f(f(b));
+            a = f[a];
+            b = f[f[b]];
         } while (a != b);
-        
+
+        int Min = numeric_limits<int>::max();
+        do {
+            Min = min(Min, v[a]);
+            a = f[a];
+        } while (a != b);
+        Mark(a);
+        return Min;
     }
 
     void Solve() {
@@ -35,10 +53,11 @@ struct Solution {
                 ans -= MinValueCir(i);
             }
         }
+        printf("%lld\n", ans);
     }
 };
 
 int main() {
     Solution().Solve();
     return 0;
-} 
+}
