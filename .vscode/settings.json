@@ -5,6 +5,8 @@
         "__split_buffer": "cpp",
         "deque": "cpp",
         "list": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "iostream": "cpp",
+        "limits": "cpp"
     }
 }
