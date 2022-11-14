@@ -1,7 +1,7 @@
+#include <algorithm>
 #include <cstdio>
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 using P = pair<long long, long long>;
@@ -15,7 +15,7 @@ P operator-(P a, P b) {
 vector<pair<P, int>> all_subsets(const vector<P> &dirs) {
     vector<pair<P, int>> v{{}};
     for (const P &d : dirs) {
-        v.resize(2 * v.size());
+        v.resize(v.size() * 2);
         for (int i = 0; i < v.size() / 2; i++) {
             v[i + v.size() / 2] = {v[i].first + d, v[i].second + 1};
         }
@@ -39,19 +39,20 @@ int main() {
         all_subsets(vector<P>(begin(dirs) + N / 2, end(dirs)));
     reverse(b.begin(), b.end());
     vector<long long> ans(N + 1);
-    vector<int> with_num; // 用b 里 k 条指令
+    vector<int> with_num;  // 用b 里 k 条指令
     P rest_prev{1e18, 1e18};
     int ib = 0;
     for (const auto &[offset, num] : a) {
-        const P rest = goal - offset;
-        if (rest != rest_prev) {
-            rest_prev = rest;
-            with_num = vector<int>(N - N / 2 + 1);
-            for (; ib < b.size() && b.at(ib).first > rest; ++ib);
-            for (; ib < b.size() && b.at(ib).first == rest; ++ib) {
-                ++with_num.at(b.at(ib).second); // 指令数 k ++
+        auto need = goal - offset;
+        if (need != rest_prev) {
+            rest_prev = need;
+            with_num = vector<int>(N - N / 2 + 1); // 一半的指令
+            for (; ib < b.size() && b[ib].first > need; ib++)
+                ;
+            for (; ib < b.size() && b[ib].first == need; ib++) {
+                ++with_num[b[ib].second];
             }
-        }
+        } 
         for (int i = 0; i < with_num.size(); i++) {
             ans[i + num] += with_num[i];
         }
