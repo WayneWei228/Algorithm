@@ -1,16 +1,19 @@
-#include <cstdio>
+#include <fstream>
 #include <iostream>
+#include <string>
+
 using namespace std;
 
-struct Solution {
-
-    void Solve() {
-        pair<int, int> p{};
-        cout << p.first << " " << p.second << endl;
-    }
-};
-
 int main() {
-    Solution().Solve();
+    ifstream fin("helpcross.in");
+    ofstream fout("helpcross.out");
+
+    int a, b;
+
+    fin >> a >> b;
+
+    fout << a + b << endl;
+    
+
     return 0;
-};
+}
