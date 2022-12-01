@@ -1,19 +1,13 @@
-#include <fstream>
 #include <iostream>
-#include <string>
+#include <vector>
+#include <set>
 
 using namespace std;
+/*
+10 102
+*/
 
 int main() {
-    ifstream fin("helpcross.in");
-    ofstream fout("helpcross.out");
-
-    int a, b;
-
-    fin >> a >> b;
-
-    fout << a + b << endl;
-    
 
     return 0;
 }
