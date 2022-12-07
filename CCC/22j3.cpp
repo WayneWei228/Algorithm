@@ -6,7 +6,7 @@
 using namespace std;
 
 /*
-AFB+8SC-4H-2GDPE+9
+AFB+888888 SC-4H-2 GDPE+9
 */
 
 int main() {
@@ -32,4 +32,5 @@ int main() {
             turns += input;
         }
     }
+    cout << instructions << " " << sign << " " << turns << endl;
 }

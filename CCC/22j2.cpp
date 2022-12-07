@@ -14,7 +14,7 @@ int main() {
         if (points <= 40) {
             isGoldTeam = false;
         } else {
-            goldPlayer++;
+            goldPlayer = goldPlayer + 1;
         }
     }
     cout << goldPlayer;
@@ -23,6 +23,7 @@ int main() {
     }
     /*
     line 20 ~ 23 equals to
-    cout << goldPlayer << ((isGoldTeam) ? "+" : "") << endl;
+    cout << goldPlayer << ((isGoldTeam == true) ? "+" : "") << endl;
     */
+
 }
