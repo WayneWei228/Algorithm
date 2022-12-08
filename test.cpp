@@ -1,41 +1,11 @@
+#include <cmath>
 #include <iostream>
-
 using namespace std;
 
-/*
-html
-css
-javascript
-
-*/
-
-/*
-  1
- 10
- 11
-100
-101
-110
-111
-
-*/
-
 int main() {
-    int grade;
-    // cin >> grade;
-
-    // for (int number = 0; number < 2; number++) {
-    //     cout << "6 ";
-    // }
-    // cout << endl;
-
-    // if (grade < 60) {
-    //     cout << "Fail" << endl;
-    // } else if (grade > 60 && grade < 90) {
-    //     cout << "Pass" << endl;
-    // } else {
-    //     cout << "Perfect!" << endl;
-    // }
-  string
+    double force = 8.18E-8;
+    double mass = 9.1093837E-31;
+    double dis = 92.0E-12;
+    cout << sqrt(force * dis / mass) << endl;
     return 0;
 }
