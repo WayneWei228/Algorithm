@@ -8,6 +8,8 @@
         "cstdio": "cpp",
         "iostream": "cpp",
         "limits": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp"
     }
 }

@@ -1,11 +1,17 @@
-#include <cmath>
 #include <iostream>
 using namespace std;
+void sf(int number, int factor = 2) {
+    if (number < 2) return;
+    if (number % factor == 0) {
+        cout << factor << " ";
+        sf(number / factor, factor);
+    } else
+        sf(number, factor + 1);
+}
 
 int main() {
-    double force = 8.18E-8;
-    double mass = 9.1093837E-31;
-    double dis = 92.0E-12;
-    cout << sqrt(force * dis / mass) << endl;
+    sf(10);
+    cout << "\n";
+
     return 0;
 }
