@@ -11,6 +11,7 @@
         "set": "cpp",
         "atomic": "cpp",
         "bitset": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "ostream": "cpp"
     }
 }
