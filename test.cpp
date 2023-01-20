@@ -11,8 +11,6 @@ void sf(int number, int factor = 2) {
 }
 
 int main() {
-    // sf(10);
-    // cout << "\n";
-
+    sf(10);
     return 0;
 }
