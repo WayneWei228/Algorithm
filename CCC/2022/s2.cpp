@@ -5,10 +5,12 @@
 #include <algorithm>
 using namespace std;
 
+
 int main() {
     int X, Y, G;
     vector<pair<string, string>> in, out;
     set<pair<string, string>> p;
+
     int ans = 0;
     cin >> X;
     for (int i = 0; i < X; i++) {
@@ -16,7 +18,7 @@ int main() {
         cin >> a.first >> a.second;
         if (a.first > a.second) {
             swap(a.first, a.second);
-        }
+        } 
         in.emplace_back(a);
     }
     cin >> Y;
@@ -37,6 +39,7 @@ int main() {
         p.emplace(make_pair(a[1], a[2]));
         p.emplace(make_pair(a[0], a[2]));
     }
+
     for (const auto& no : in) {
         if (p.count(no) == 0) {
             ans++;

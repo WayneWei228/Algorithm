@@ -15,6 +15,7 @@ int main() {
         char input = getchar();
         if (input == EOF) break;
 
+
         if (isalpha(input) && turns != "") {
             cout << instructions << " " << sign << " " << turns << endl;
             instructions = "";
