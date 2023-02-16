@@ -46,13 +46,13 @@ int main() {
         auto need = goal - offset;
         if (need != rest_prev) {
             rest_prev = need;
-            with_num = vector<int>(N - N / 2 + 1); // 一半的指令
+            with_num = vector<int>(N - N / 2 + 1);  // 一半的指令
             for (; ib < b.size() && b[ib].first > need; ib++)
                 ;
             for (; ib < b.size() && b[ib].first == need; ib++) {
                 ++with_num[b[ib].second];
             }
-        } 
+        }
         for (int i = 0; i < with_num.size(); i++) {
             ans[i + num] += with_num[i];
         }
