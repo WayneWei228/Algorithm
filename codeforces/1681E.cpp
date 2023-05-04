@@ -34,16 +34,17 @@ int main() {
                    lg, vector<vector<long long>>(
                            2, vector<long long>(2, INF64))));
     // dp[i][0][j][k]
-    for (int i = 0; i + 1 < n - 1; i++) {
+    for (int i = 0; i < n - 2; i++) {
         for (int k = 0; k < 2; k++) {
             dp[i][0][0][k] =
                 abs(d[i][0].first + 1 - d[i + 1][k].first) +
                 abs(d[i][0].second - d[i + 1][k].second) + 1;
+            
             dp[i][0][1][k] =
                 abs(d[i][1].first + 1 - d[i + 1][k].first) +
                 abs(d[i][1].second - d[i + 1][k].second) + 1;
         }
     }
-
+    
     return 0;
 }
