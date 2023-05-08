@@ -8,7 +8,6 @@ double cal(double end, double begin) {
 }
 
 int main() {
-    double q = cal(27, 40);
-    double p = 12 / 100.0;
-    cout << q / p << endl;
+double x = 2*acos(0);
+    cout << x << endl;
 }
