@@ -25,7 +25,6 @@ int main() {
     }
     sort(a.begin(), a.end());
     a.push_back(a[0]);
-    cout << endl;
     for (int i = 0; i < n; i++) {
         long double x = a[i + 1].first - a[i].first;
         cout << a[i].first << endl;

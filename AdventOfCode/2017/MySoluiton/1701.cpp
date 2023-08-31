@@ -40,6 +40,7 @@ struct Solution {
 };
 
 int main() {
+    freopen("in.txt", "r", stdin);
     Solution().Solve();
     return 0;
 }

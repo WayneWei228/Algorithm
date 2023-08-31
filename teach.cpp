@@ -1,58 +1,102 @@
-#include <cstdio>
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
+
+/*
+库
+library
+
+Method
+"\n" = endl
+
+int, double, bool, string, char
+
+value:     6
+          __, __, __, __, __,
+index:     0,  1,  2,  3,  4,
+
+array
+
+*/
 using namespace std;
 
-int AddNumber(int a, int b) {
-    int x = a + b;
-    return x;
-}
-
-int AddNumber(int a, int b, int c) {
-    int x = a + b + c;
-    return x;
+int factorial(int n) {
+    if (n <= 1) return 1;
+    // cout << n;
+    return n * factorial(n - 1);
 }
 
 int main() {
-    // printf("Hello World");
+    // int array[5];
 
-    // int x;
-    // cin >> x;
-    // if (x > 90) {
-    //     cout << "Grade A" << endl;
-    // } else {
-    //     cout << "Fail!" << endl;
+    // int i = 0;
+    // while (i < 5) {
+    //     array[i] = i - 1;
+    //     cout << array[i] << " ";
+    //     i += 1;
     // }
-    // while (x < 10) {
-    //     cout << x << endl;
-    //     x = x + 1;
+    // cout << endl;
+    // for (int i = 0; i < 5; i++) {
+    //     array[i] = i - 1;
+    //     cout << array[i] << " ";
     // }
-    // int a, b;
-    // cin >> a >> b;
-    // int sum = AddNumber(AddNumber(a, b, 30), 30);
-    // double a = 10.01;
-    // int arr[3];
-    // arr[0] = 1;
-    // arr[1] = 2;
-    // arr[2] = 50;
-    // int index = 0;
-    // for (int i = 0; i < 4; i++) {
-    //     while (index < 3) {
-    //         cout << arr[index] << endl;
-    //         index = index + 1;
+    // vector<int> a = {1, 2, 3};
+    // a.push_back(1);
+    // a.push_back(2);
+    // // a.pop_back();
+    // for (int i = 0; i < a.size(); i++) {
+    //     cout << a[i] << " ";
+    // }
+    // cout << endl;
+
+    // vector<int> arr = {1, 2, 3};
+
+    // map<int, string> studentInfo;
+    // studentInfo.insert(make_pair(3, "Jonathan"));
+    // studentInfo.insert(make_pair(1, "Wayne"));
+    // studentInfo.insert(make_pair(2, "Kelsey"));
+    // for (auto i : studentInfo) {
+    //     cout << i.first << " " << i.second << endl;
+    // }
+
+    // vector<vector<int>> arr2D;
+    // arr2D.resize(3);
+    // for (int i = 0; i < arr2D.size(); i++) {
+    //     arr2D[i].resize(4);
+    // }
+    // cout << arr2D.size() << " " << arr2D[0].size() << endl;
+
+    // int k = 1;
+    // for (int i = 0; i < 3; i++) {
+    //     for (int j = 0; j < 4; j++) {
+    //         arr2D[i][j] = k;
+    //         k++;
     //     }
     // }
-    vector<int> arr;
-    arr.push_back(10);
-    arr.push_back(20);
-    // arr: 10 20
-    for (int i = 0; i < arr.size(); i++) {
-        cout << arr[i] << endl;
-    }
 
+    // for (int i = 0; i < 3; i++) {
+    //     for (int j = 0; j < 4; j++) {
+    //         cout << arr2D[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
-    // cout << sum << endl;
-    // cout << x << endl;
+    // int c = Sum(5, 2);
+    // cout << c << endl;
+
+    // vector<int> arr;
+    // arr.resize(10);
+    // for (int i = 0; i < 10; i++) {
+    //     arr[i] = i;
+    // }
+    // for (int i = 0; i < 10; i++) {
+    //     for (int j = i + 1; j < 10; j++) {
+
+    //     }
+    // }
+
+    int ans = factorial(3);
+    cout << ans << endl;
     return 0;
 }
