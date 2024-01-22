@@ -10,8 +10,8 @@
                 "/System/Library/Frameworks",
                 "/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
+            "compilerPath": "/usr/bin/g++",
+            "cppStandard": "c++17",
             "intelliSenseMode": "macos-gcc-arm64"
         }
     ],
