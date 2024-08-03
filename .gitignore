@@ -9,3 +9,4 @@ build-win.cmd
 a.out
 codechef/.DS_Store
 .vscode
+/random_stuff
