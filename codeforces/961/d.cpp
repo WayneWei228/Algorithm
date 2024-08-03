@@ -6,4 +6,5 @@ int main() {
     int tt;
     cin >> tt;
 
+    return 0;
 }
