@@ -3,10 +3,8 @@ build.ninja
 build-win.cmd
 .ninja_log
 *.bin
-**/.DS_Store
+.DS_Store
 *.o
 *.exe
 a.out
 codechef/.DS_Store
-
-
